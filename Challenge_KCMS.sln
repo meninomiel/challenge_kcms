@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge_KCMS.Android", "Challenge_KCMS\Challenge_KCMS.Android\Challenge_KCMS.Android.csproj", "{980C1A9A-D0D6-45F1-8593-C2D8BFEE35E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge_KCMS", "Challenge_KCMS\Challenge_KCMS\Challenge_KCMS.csproj", "{9899A9CE-DB5E-4985-B14F-4DB5C326455F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{980C1A9A-D0D6-45F1-8593-C2D8BFEE35E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{980C1A9A-D0D6-45F1-8593-C2D8BFEE35E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{980C1A9A-D0D6-45F1-8593-C2D8BFEE35E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{980C1A9A-D0D6-45F1-8593-C2D8BFEE35E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{980C1A9A-D0D6-45F1-8593-C2D8BFEE35E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{980C1A9A-D0D6-45F1-8593-C2D8BFEE35E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9899A9CE-DB5E-4985-B14F-4DB5C326455F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9899A9CE-DB5E-4985-B14F-4DB5C326455F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9899A9CE-DB5E-4985-B14F-4DB5C326455F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9899A9CE-DB5E-4985-B14F-4DB5C326455F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9899A9CE-DB5E-4985-B14F-4DB5C326455F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9899A9CE-DB5E-4985-B14F-4DB5C326455F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B12A4F1-6840-496D-A5B6-3DDB8AB15ABF}
+	EndGlobalSection
+EndGlobal
