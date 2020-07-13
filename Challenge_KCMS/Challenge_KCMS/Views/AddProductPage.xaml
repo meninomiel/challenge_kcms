@@ -1,12 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Challenge_KCMS.Views.ProductsPage"
-             Title="Lista de Produtos">
-
+             x:Class="Challenge_KCMS.Views.AddProductPage">
     <ContentPage.Content>
-
         <StackLayout>
+            <Entry Placeholder="Nome do Produto" Text="{Binding ProductName}"></Entry>
+            <Entry Placeholder="Preço do Produto" Text="{Binding ProductPrice}" Keyboard="Numeric"></Entry>
+            <Button Text="Salvar" Command="{Binding AddProductCommand}"></Button>
+
             <ListView ItemsSource="{Binding Products}"
               CachingStrategy="RecycleElement"
               RowHeight="60">
@@ -32,9 +33,6 @@
                 </ListView.ItemTemplate>
 
             </ListView>
-
-            <Button Text="Adicionar Produto" Command="{Binding ButtonAddProductCommand}"></Button>
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>

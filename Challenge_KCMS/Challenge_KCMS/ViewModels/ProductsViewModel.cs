@@ -1,11 +1,19 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Challenge_KCMS.Models;
 using Challenge_KCMS.ViewModels;
+using Challenge_KCMS.Views;
+using Xamarin.Forms;
 
 namespace Challenge_KCMS.ViewModels
 {
-    public class ProductsViewModel
+    public class ProductsViewModel : BaseViewModel
     {
+
         private ObservableCollection<Product> _products;
         public ObservableCollection<Product> Products
         {
@@ -13,6 +21,7 @@ namespace Challenge_KCMS.ViewModels
             set
             {
                 _products = value;
+                OnPropertyChanged();
             }
         }
 
@@ -39,6 +48,16 @@ namespace Challenge_KCMS.ViewModels
                     Image = "https://nicefilms.com.br/wp-content/uploads/ICON_PRODUTO.png"
                 }
             };
+            
+            
+
+            //this.Navigation = navigation;          
         }
+
+
+        public ICommand ButtonAddProductCommand => new Command(async () =>
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new AddProductPage());
+        });
     }
 }

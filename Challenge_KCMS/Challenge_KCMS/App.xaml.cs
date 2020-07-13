@@ -12,7 +12,7 @@ namespace Challenge_KCMS
         {
             InitializeComponent();
 
-            MainPage = new ProductsPage();
+            MainPage = new NavigationPage(new ProductsPage());
         }
 
         protected override void OnStart()

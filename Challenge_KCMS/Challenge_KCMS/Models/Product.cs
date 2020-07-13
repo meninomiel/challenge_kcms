@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Challenge_KCMS.Models
@@ -12,7 +13,5 @@ namespace Challenge_KCMS.Models
         public double Price { get; set; }
         public int Quantity { get; set; }
         public string Image { get; set; }
-
-        //category
     }
 }
