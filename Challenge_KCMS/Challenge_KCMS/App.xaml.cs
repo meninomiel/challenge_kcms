@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Challenge_KCMS.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace Challenge_KCMS
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ProductsPage();
         }
 
         protected override void OnStart()
