@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Challenge_KCMS.ViewModels;
 using Challenge_KCMS.Models;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace Challenge_KCMS.ViewModels
 {
@@ -15,7 +16,7 @@ namespace Challenge_KCMS.ViewModels
         public string ProductName { get; set; }
         public double ProductPrice { get; set; }
 
-        public void AddProduct()
+        async void AddProductAsync()
         {
             Product NewProduct = new Product()
             {
@@ -23,11 +24,13 @@ namespace Challenge_KCMS.ViewModels
                 Price = System.Convert.ToDouble(ProductPrice)
             };
 
-            //ProductsViewModel.Products.Add(NewProduct);
-            Products.Add(NewProduct);
+            //await App.Database.SaveProductAsync(NewProduct);
+
+            ProductName = "OK";
+            //listView.ItemsSource = await App.Database.GetPeopleAsync();
         }
 
-        public ICommand AddProductCommand => new Command(AddProduct);
+        public ICommand AddProductCommand => new Command(AddProductAsync);
 
         
     }

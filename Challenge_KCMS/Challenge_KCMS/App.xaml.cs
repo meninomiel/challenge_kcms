@@ -1,5 +1,7 @@
-﻿using Challenge_KCMS.Views;
+﻿using Challenge_KCMS.Data;
+using Challenge_KCMS.Views;
 using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,6 +10,7 @@ namespace Challenge_KCMS
 {
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();

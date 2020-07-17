@@ -4,8 +4,8 @@
              x:Class="Challenge_KCMS.Views.AddProductPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Nome do Produto" Text="{Binding ProductName}"></Entry>
-            <Entry Placeholder="Preço do Produto" Text="{Binding ProductPrice}" Keyboard="Numeric"></Entry>
+            <Entry x:Name="InputName" Placeholder="Nome do Produto" Text="{Binding ProductName}"></Entry>
+            <Entry x:Name="InputPrice" Placeholder="Preço do Produto" Text="{Binding ProductPrice}" Keyboard="Numeric"></Entry>
             <Button Text="Salvar" Command="{Binding AddProductCommand}"></Button>
 
             <ListView ItemsSource="{Binding Products}"
