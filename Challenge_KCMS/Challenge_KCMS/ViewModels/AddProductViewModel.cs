@@ -1,28 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Challenge_KCMS.Models;
+using Challenge_KCMS.Services;
+using Challenge_KCMS.Validators;
+using FluentValidation;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Challenge_KCMS.ViewModels;
-using Challenge_KCMS.Models;
-using System.ComponentModel;
-using System.Threading.Tasks;
 
 namespace Challenge_KCMS.ViewModels
 {
-    public class AddProductViewModel : ProductsViewModel
+    public class AddProductViewModel : BaseViewModel
     {
+        public ICommand AddProductCommand { get; private set; }
+        public ICommand ViewAllProductCommand { get; private set; }
 
-        public string ProductName { get; set; }
-        public double ProductPrice { get; set; }
-
-        void AddProductAsync()
+        public AddProductViewModel()
         {
-            ProductName = "";
+            _productValidator = new ProductValidator();
+            _product = new Product();
+            _productRepository = new ProductRepository();
+            AddProductCommand = new Command(async () => await AddProduct());
+            ViewAllProductCommand = new Command(async () => await ShowProductList());
         }
 
-        public ICommand AddProductCommand => new Command(AddProductAsync);
 
-        
+        async Task AddProduct()
+        {
+            var context = new ValidationContext<Product>(_product);
+            var validationResult = _productValidator.Validate(context);
+
+            if (validationResult.IsValid)
+            {
+                bool userResponse = await _messageService.ShowAsyncBool(
+                    "Adicionar Pedido",
+                    "Deseja salvar os detalhes do produto?", 
+                    "OK", "Cancela");
+
+                if (userResponse)
+                {
+                    _productRepository.InsertProduct(_product);
+                    await _navigationService.NavigateToProductsPage();
+                }
+            }
+            else
+            {
+                await _messageService.ShowAsync(
+                    "Adicionar Produto", validationResult
+                    .Errors[0].ErrorMessage, "OK");
+            }
+        }
+
+        async Task ShowProductList()
+        {
+            await _navigationService.NavigateToProductsPage();
+        }
+        public bool IsViewAll => _productRepository.GetProductList().Count > 0 ? true : false;
+
+
     }
 }
