@@ -15,17 +15,6 @@ namespace Challenge_KCMS.ViewModels
     public class ProductsViewModel : BaseViewModel
     {
 
-        private ObservableCollection<Product> _products;
-        public ObservableCollection<Product> Products
-        {
-            get { return _products; }
-            set
-            {
-                _products = value;
-                OnPropertyChanged();
-            }
-        }
-
         public ProductsViewModel()
         {
                       
