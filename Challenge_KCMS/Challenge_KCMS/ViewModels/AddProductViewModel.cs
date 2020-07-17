@@ -16,18 +16,9 @@ namespace Challenge_KCMS.ViewModels
         public string ProductName { get; set; }
         public double ProductPrice { get; set; }
 
-        async void AddProductAsync()
+        void AddProductAsync()
         {
-            Product NewProduct = new Product()
-            {
-                Name = ProductName,
-                Price = System.Convert.ToDouble(ProductPrice)
-            };
-
-            //await App.Database.SaveProductAsync(NewProduct);
-
-            ProductName = "OK";
-            //listView.ItemsSource = await App.Database.GetPeopleAsync();
+            ProductName = "";
         }
 
         public ICommand AddProductCommand => new Command(AddProductAsync);

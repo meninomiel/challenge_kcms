@@ -28,7 +28,7 @@ namespace Challenge_KCMS.Data
             sqliteconnection.CreateTable<Product>();
         }
 
-        #region Methods
+        #region CRUD Methods
 
         // Obter todos os produtos  
         public List<Product> GetProductList()
@@ -37,7 +37,7 @@ namespace Challenge_KCMS.Data
                     select data).ToList();
         }
 
-        // Obter dados especifico por id
+        // Obter detalhes do produto
         public Product GetProductDetail(int id)
         {
             return sqliteconnection.Table<Product>().FirstOrDefault(t => t.Id == id);
