@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,5 +18,12 @@ namespace Challenge_KCMS.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+
+        // Chave estrangeira -> Categoria
+        [ForeignKey(typeof(Category))]
+        public int CategoryId { get; set; }
+
+        [ManyToOne]
+        public Category Category { get; set; }
     }
 }
