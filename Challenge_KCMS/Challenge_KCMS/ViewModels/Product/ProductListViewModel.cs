@@ -13,12 +13,12 @@ using Xamarin.Forms;
 
 namespace Challenge_KCMS.ViewModels
 {
-    public class ProductsViewModel : BaseViewModel
+    public class ProductListViewModel : BaseViewModel
     {
         public ICommand AddCommand { get; private set; }
         public ICommand DeleteAllProductsCommand { get; private set; }
 
-        public ProductsViewModel()
+        public ProductListViewModel()
         {
             _productRepository = new ProductRepository();
             AddCommand = new Command(async () => await GoToAddProductPage());

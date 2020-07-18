@@ -10,12 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace Challenge_KCMS.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProductDetailsPage : ContentPage
+	public partial class ProductDetails : ContentPage
 	{
-		public ProductDetailsPage (int productId)
+		public ProductDetails(int productId)
 		{
-			InitializeComponent ();
-            this.BindingContext = new DetailsPageViewModel(productId);
+			InitializeComponent();
+            this.BindingContext = new ProductDetailsViewModel(productId);
 		}
 	}
 }

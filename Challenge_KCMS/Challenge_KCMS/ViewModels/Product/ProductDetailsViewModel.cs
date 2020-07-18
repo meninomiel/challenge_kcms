@@ -12,12 +12,12 @@ using Xamarin.Forms;
 
 namespace Challenge_KCMS.Views
 {
-    public class DetailsPageViewModel : BaseViewModel
+    public class ProductDetailsViewModel : BaseViewModel
     {
         public ICommand UpdateProductCommand { get; private set; }
         public ICommand DeleteProductCommand { get; private set; }
 
-        public DetailsPageViewModel(int selectedProductId)
+        public ProductDetailsViewModel(int selectedProductId)
         {
             _productValidator = new ProductValidator();
             _product = new Product();

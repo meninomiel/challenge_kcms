@@ -35,11 +35,11 @@ namespace Challenge_KCMS
             // Se existir dados então exibe a lista senão inclui dados
             if (getLocalDB.Count > 0)
             {
-                MainPage = new NavigationPage(new ProductsPage());
+                MainPage = new NavigationPage(new ProductList());
             }
             else
             {
-                MainPage = new NavigationPage(new AddProductPage());
+                MainPage = new NavigationPage(new AddProduct());
             }
         }
 

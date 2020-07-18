@@ -11,16 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace Challenge_KCMS.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProductsPage : ContentPage
-    {
-		public ProductsPage ()
+	public partial class AddProduct : ContentPage
+	{
+		public AddProduct()
 		{
-			InitializeComponent ();
+			InitializeComponent();
+            BindingContext = new AddProductViewModel();
 		}
-
-        protected override void OnAppearing()
-        {
-            this.BindingContext = new ProductsViewModel();
-        }
-    }
+	}
 }
