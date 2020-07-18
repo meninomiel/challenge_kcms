@@ -35,6 +35,7 @@
             </ListView>
 
             <Button Text="Adicionar Produto" Command="{Binding AddCommand}"></Button>
+            <Button Text="Remover Todos os Produtos" Command="{Binding DeleteAllProductsCommand}"></Button>
         </StackLayout>
 
     </ContentPage.Content>

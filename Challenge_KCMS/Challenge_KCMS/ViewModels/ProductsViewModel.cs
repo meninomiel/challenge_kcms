@@ -35,9 +35,9 @@ namespace Challenge_KCMS.ViewModels
         async Task DeleteAllProducts()
         {
             bool userResponse = await _messageService.ShowAsyncBool(
-                "Lista de Produtos",
-                "Deletar todos os detalhes de pedidos?", 
-                "OK", "Cancelar");
+                "Deletar todos os Produtos",
+                "Tem certeza que quer fazer esta operação?", 
+                "Sim", "Cancelar");
 
             if (userResponse)
             {

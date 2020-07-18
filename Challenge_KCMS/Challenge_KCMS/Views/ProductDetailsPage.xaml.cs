@@ -12,9 +12,10 @@ namespace Challenge_KCMS.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProductDetailsPage : ContentPage
 	{
-		public ProductDetailsPage (int id)
+		public ProductDetailsPage (int productId)
 		{
 			InitializeComponent ();
+            this.BindingContext = new DetailsPageViewModel(productId);
 		}
 	}
 }

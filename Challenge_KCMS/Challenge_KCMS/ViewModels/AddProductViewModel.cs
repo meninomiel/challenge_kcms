@@ -31,9 +31,9 @@ namespace Challenge_KCMS.ViewModels
             if (validationResult.IsValid)
             {
                 bool userResponse = await _messageService.ShowAsyncBool(
-                    "Adicionar Pedido",
-                    "Deseja salvar os detalhes do produto?", 
-                    "OK", "Cancela");
+                    "Adicionar Produto",
+                    "Deseja adicionar este produto?", 
+                    "OK", "Cancelar");
 
                 if (userResponse)
                 {

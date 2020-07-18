@@ -20,7 +20,7 @@
                    Placeholder="Preço"></Entry>
             <Editor x:Name="inputDescription"
                    Text="{Binding Description}"
-                   Placeholder="Nome do Produto"></Editor>
+                   Placeholder="Descrição do Produto"></Editor>
         </StackLayout>
   </ContentView.Content>
 </ContentView>
