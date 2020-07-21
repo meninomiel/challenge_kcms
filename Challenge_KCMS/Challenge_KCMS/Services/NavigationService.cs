@@ -6,9 +6,24 @@ namespace Challenge_KCMS.Services
 {
     public class NavigationService : INavigationService
     {
+        public async Task NavigateToAddCategoryPage()
+        {
+            await Challenge_KCMS.App.Current.MainPage.Navigation.PushAsync(new AddCategory());
+        }
+
         public async Task NavigateToAddProductPage()
         {
             await Challenge_KCMS.App.Current.MainPage.Navigation.PushAsync(new AddProduct());
+        }
+
+        public async Task NavigateToCategoriesPage()
+        {
+            await Challenge_KCMS.App.Current.MainPage.Navigation.PushAsync(new CategoryList());
+        }
+
+        public async Task NavigateToCategoryDetailPage(int categoryId)
+        {
+            await Challenge_KCMS.App.Current.MainPage.Navigation.PushAsync(new CategoryDetails(categoryId));
         }
 
         public async Task NavigateToProductDetailsPage(int id)

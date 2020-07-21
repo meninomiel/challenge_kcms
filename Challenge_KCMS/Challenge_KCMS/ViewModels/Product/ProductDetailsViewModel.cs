@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Challenge_KCMS.Views
+namespace Challenge_KCMS.ViewModels
 {
     public class ProductDetailsViewModel : BaseViewModel
     {
@@ -20,8 +20,10 @@ namespace Challenge_KCMS.Views
         public ProductDetailsViewModel(int selectedProductId)
         {
             _productValidator = new ProductValidator();
-            _product = new Product();
-            _product.Id = selectedProductId;
+            _product = new Product
+            {
+                Id = selectedProductId
+            };
             _productRepository = new ProductRepository();
             UpdateProductCommand = new Command(async () => await UpdateProduct());
             DeleteProductCommand = new Command(async () => await DeleteProduct());
