@@ -28,7 +28,7 @@ namespace Challenge_KCMS.Data
             sqliteconnection.CreateTable<Product>();
         }
 
-        #region CRUD Methods
+        #region CRUD PRoduct Methods
 
         // Obter todos os produtos  
         public List<Product> GetProductList()
@@ -70,5 +70,33 @@ namespace Challenge_KCMS.Data
         #endregion
 
 
+        #region CRUD Category Methods
+
+        // Obter todas as categorias
+        public List<Category> GetCategories()
+        {
+            return (from data in sqliteconnection.Table<Category>()
+                    select data).ToList();
+        }
+
+        // Adicionar categoria
+        public void InsertCategory(Category category)
+        {
+            sqliteconnection.Insert(category);
+        }
+
+        // Deletar categoria
+        public void DeleteCategory(int categoryId)
+        {
+            sqliteconnection.Delete<Category>(categoryId);
+        }
+
+        // Deletar tudo
+        public void DeleteAllCategories()
+        {
+            sqliteconnection.DeleteAll<Category>();
+        }
+
+        #endregion
     }
 }
