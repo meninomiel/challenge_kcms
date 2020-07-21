@@ -85,6 +85,12 @@ namespace Challenge_KCMS.Data
             sqliteconnection.Insert(category);
         }
 
+        // Obter detalhes da categoria
+        public Category GetCategoryDetail(int categoryId)
+        {
+            return sqliteconnection.Table<Category>().FirstOrDefault(t => t.Id == categoryId);
+        }
+
         // Deletar categoria
         public void DeleteCategory(int categoryId)
         {

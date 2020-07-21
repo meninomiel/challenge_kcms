@@ -18,5 +18,8 @@ namespace Challenge_KCMS.Interfaces.Repositories
 
         // Deleta todas categorias
         void DeleteAllCategories();
+
+        // Obtem detalhe da categoria
+        Category GetCategoryDetail(int categoryId);
     }
 }

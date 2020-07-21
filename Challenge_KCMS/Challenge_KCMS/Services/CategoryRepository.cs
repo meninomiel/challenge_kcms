@@ -29,6 +29,11 @@ namespace Challenge_KCMS.Services
             return _databaseHelper.GetCategories();
         }
 
+        public Category GetCategoryDetail(int categoryId)
+        {
+            return _databaseHelper.GetCategoryDetail(categoryId);
+        }
+
         public void InsertCategory(Category category)
         {
             _databaseHelper.InsertCategory(category);
