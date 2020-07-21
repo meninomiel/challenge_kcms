@@ -4,9 +4,34 @@
              x:Class="Challenge_KCMS.Views.CategoryList">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding Categories}"
+                      SelectedItem="{Binding SelectedCategoryItem, Mode=TwoWay}"
+              CachingStrategy="RecycleElement"
+              RowHeight="60">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"></RowDefinition>
+                                    <RowDefinition Height="25"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="150"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding CategoryName}"></Label>
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding ProductListOfCategory.Count}"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            
+            <Button Text="Adicionar Categoria"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

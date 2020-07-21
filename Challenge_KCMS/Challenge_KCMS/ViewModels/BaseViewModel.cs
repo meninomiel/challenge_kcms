@@ -87,13 +87,24 @@ namespace Challenge_KCMS.ViewModels
             }
         }
 
-        ICollection<Category> _productListOfCategory;
-        public ICollection<Product> ProductListOfCategory
+        List<Category> _categoryList;
+        public List<Category> CategoryList
         {
-            get => _category.Products;
+            get => _categoryList;
             set
             {
-                _category.Products = value;
+                _categoryList = value;
+                NotifyPropertyChanged(nameof(CategoryList));
+            }
+        }
+
+        ICollection<Category> _productListOfCategory;
+        public ICollection<Category> ProductListOfCategory
+        {
+            get => _productListOfCategory;
+            set
+            {
+                _productListOfCategory = value;
                 NotifyPropertyChanged(nameof(ProductListOfCategory));
             }
         }
@@ -101,8 +112,7 @@ namespace Challenge_KCMS.ViewModels
         #endregion
 
         #endregion
-
-
+        
         #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
