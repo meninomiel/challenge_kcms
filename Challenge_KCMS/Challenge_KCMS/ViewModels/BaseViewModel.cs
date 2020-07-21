@@ -1,4 +1,5 @@
-﻿using Challenge_KCMS.Interfaces.Services;
+﻿using Challenge_KCMS.Interfaces.Repositories;
+using Challenge_KCMS.Interfaces.Services;
 using Challenge_KCMS.Models;
 using Challenge_KCMS.Services;
 using FluentValidation;
@@ -15,6 +16,10 @@ namespace Challenge_KCMS.ViewModels
         public IValidator _productValidator;
         public IProductRepository _productRepository;
 
+        public Category _category;
+        public IValidator _categoryValidator;
+        public ICategoryRepository _categoryRepository;
+
         protected IMessageService _messageService;
         protected INavigationService _navigationService;
 
@@ -24,6 +29,9 @@ namespace Challenge_KCMS.ViewModels
             _navigationService = DependencyService.Get<INavigationService>();
         }
 
+        #region Properties
+
+        #region Product
         public string Name
         {
             get => _product.Name;
@@ -64,6 +72,35 @@ namespace Challenge_KCMS.ViewModels
                 NotifyPropertyChanged(nameof(ProductList));
             }
         }
+
+        #endregion
+
+        #region Category
+
+        public string CategoryName
+        {
+            get => _category.Name;
+            set
+            {
+                _category.Name = value;
+                NotifyPropertyChanged(nameof(CategoryName));
+            }
+        }
+
+        ICollection<Category> _productListOfCategory;
+        public ICollection<Product> ProductListOfCategory
+        {
+            get => _category.Products;
+            set
+            {
+                _category.Products = value;
+                NotifyPropertyChanged(nameof(ProductListOfCategory));
+            }
+        }
+
+        #endregion
+
+        #endregion
 
 
         #region INotifyPropertyChanged
