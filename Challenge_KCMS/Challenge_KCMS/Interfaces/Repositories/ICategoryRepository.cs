@@ -21,5 +21,8 @@ namespace Challenge_KCMS.Interfaces.Repositories
 
         // Obtem detalhe da categoria
         Category GetCategoryDetail(int categoryId);
+
+        // Atualiza a categoria
+        void UpdateCategory(Category category);
     }
 }

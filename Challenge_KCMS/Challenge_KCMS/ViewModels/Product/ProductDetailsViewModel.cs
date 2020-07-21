@@ -66,7 +66,7 @@ namespace Challenge_KCMS.ViewModels
             else
             {
                 await _messageService.ShowAsync(
-                    "Detalhes do Pedido", validateResult
+                    "Detalhes do Produto", validateResult
                     .Errors[0].ErrorMessage, "OK");
             }
         }
@@ -75,8 +75,6 @@ namespace Challenge_KCMS.ViewModels
         {
             _product = _productRepository.GetProductDetail(_product.Id);
         }
-
-
 
     }
 }

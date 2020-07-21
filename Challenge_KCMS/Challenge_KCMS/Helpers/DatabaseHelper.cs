@@ -70,7 +70,6 @@ namespace Challenge_KCMS.Data
 
         #endregion
 
-
         #region CRUD Category Methods
 
         // Obter todas as categorias
@@ -102,6 +101,12 @@ namespace Challenge_KCMS.Data
         public void DeleteAllCategories()
         {
             sqliteconnection.DeleteAll<Category>();
+        }
+
+        // Atualizar categoria
+        public void UpdateCategory(Category category)
+        {
+            sqliteconnection.Update(category);
         }
 
         #endregion

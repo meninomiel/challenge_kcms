@@ -38,5 +38,10 @@ namespace Challenge_KCMS.Services
         {
             _databaseHelper.InsertCategory(category);
         }
+
+        public void UpdateCategory(Category category)
+        {
+            _databaseHelper.UpdateCategory(category);
+        }
     }
 }

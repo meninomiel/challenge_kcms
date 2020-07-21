@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Challenge_KCMS.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,8 @@ namespace Challenge_KCMS.Views
 	{
 		public CategoryDetails(int categoryId)
 		{
-			InitializeComponent ();
+			InitializeComponent();
+            this.BindingContext = new CategoryDetailsViewModel(categoryId);
 		}
 	}
 }
