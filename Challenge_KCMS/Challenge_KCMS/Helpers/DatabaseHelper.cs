@@ -26,6 +26,7 @@ namespace Challenge_KCMS.Data
 
             // Criando a tabela no BD
             sqliteconnection.CreateTable<Product>();
+            sqliteconnection.CreateTable<Category>();
         }
 
         #region CRUD PRoduct Methods

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Challenge_KCMS.Models
 {
-    [Table("Category")]
+    [Table(nameof(Category))]
     public class Category
     {
         [PrimaryKey, AutoIncrement]

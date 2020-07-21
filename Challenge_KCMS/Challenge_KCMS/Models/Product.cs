@@ -9,7 +9,7 @@ namespace Challenge_KCMS.Models
 {
     //definindo o modelo de domínio
 
-    [Table("Products")]
+    [Table(nameof(Product))]
     public class Product
     {
         [PrimaryKey, AutoIncrement]
