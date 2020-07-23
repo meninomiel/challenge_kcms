@@ -13,13 +13,17 @@
       <StackLayout>
             <Entry x:Name="inputName"
                    Text="{Binding Name}"
-                   Placeholder="Nome do Produto"></Entry>
+                   Placeholder="Nome do Produto" />
             <Entry x:Name="inputPrice"
                    Text="{Binding Price, Converter={StaticResource currencyConverter}}"
-                   Placeholder="Preço"></Entry>
+                   Placeholder="Preço" />
             <Editor x:Name="inputDescription"
                    Text="{Binding Description}"
-                   Placeholder="Descrição do Produto"></Editor>
+                   Placeholder="Descrição do Produto" />
+            <Picker Title="Selecione Categoria" ItemsSource="{Binding CategoryList}" 
+                    ItemDisplayBinding="{Binding Name}" 
+                    SelectedItem="{Binding Category}" />
+
         </StackLayout>
   </ContentView.Content>
 </ContentView>

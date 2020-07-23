@@ -13,6 +13,7 @@ namespace Challenge_KCMS.ViewModels
     {
         public ICommand AddCommand { get; private set; }
         public ICommand DeleteAllCategoriesCommand { get; private set; }
+        public ICommand GoToAddProductCommand { get; private set; }
 
         public CategoryListViewModel()
         {
@@ -20,7 +21,13 @@ namespace Challenge_KCMS.ViewModels
 
             AddCommand = new Command(async () => await GoToAddCategoryPage());
             DeleteAllCategoriesCommand = new Command(async () => await DeleteAllCategories());
+            GoToAddProductCommand = new Command(async () => await GoToAddProductPage());
             GetAllCategories();
+        }
+
+        async Task GoToAddProductPage()
+        {
+            await _navigationService.NavigateToAddProductPage();
         }
 
         private void GetAllCategories()

@@ -8,23 +8,19 @@
             <ListView ItemsSource="{Binding CategoryList}"
                       SelectedItem="{Binding SelectedCategoryItem, Mode=TwoWay}"
               CachingStrategy="RecycleElement"
-              RowHeight="60">
+              HasUnevenRows="True">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="5">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="150"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
 
                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"></Label>
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding ProductListOfCategory}"></Label>
+                                <!--<Label Grid.Row="0" Grid.Column="0" Text="{Binding ProductListOfCategory}"></Label>-->
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
@@ -33,6 +29,7 @@
             </ListView>
 
             <Button Text="Adicionar Categoria" Command="{Binding AddCommand}"></Button>
+            <Button Text="Adicionar Produto" Command="{Binding GoToAddProductCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

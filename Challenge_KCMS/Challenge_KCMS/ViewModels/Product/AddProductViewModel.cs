@@ -16,8 +16,14 @@ namespace Challenge_KCMS.ViewModels
         public AddProductViewModel()
         {
             _productValidator = new ProductValidator();
+
             _product = new Product();
             _productRepository = new ProductRepository();
+
+            _category = new Category();
+            _categoryRepository = new CategoryRepository();
+            CategoryList = _categoryRepository.GetCategories();
+            
             AddProductCommand = new Command(async () => await AddProduct());
             ViewAllProductCommand = new Command(async () => await ShowProductList());
         }

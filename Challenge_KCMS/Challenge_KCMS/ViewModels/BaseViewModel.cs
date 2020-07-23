@@ -62,6 +62,16 @@ namespace Challenge_KCMS.ViewModels
             }
         }
 
+        public Category Category
+        {
+            get => _product.Category;
+            set
+            {
+                _product.Category = value;
+                NotifyPropertyChanged(nameof(Category));
+            }
+        }
+
         List<Product> _productList;
         public List<Product> ProductList
         {
