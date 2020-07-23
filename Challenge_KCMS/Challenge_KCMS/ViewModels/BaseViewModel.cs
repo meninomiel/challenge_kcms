@@ -62,6 +62,16 @@ namespace Challenge_KCMS.ViewModels
             }
         }
 
+        public int CategoryId
+        {
+            get => _product.CategoryId;
+            set
+            {
+                _product.CategoryId = value;
+                NotifyPropertyChanged(nameof(CategoryId));
+            }
+        }
+
         public Category Category
         {
             get => _product.Category;
@@ -108,13 +118,13 @@ namespace Challenge_KCMS.ViewModels
             }
         }
 
-        ICollection<Category> _productListOfCategory;
-        public ICollection<Category> ProductListOfCategory
+        //ICollection<Product> _productListOfCategory;
+        public List<Product> ProductListOfCategory
         {
-            get => _productListOfCategory;
+            get => _category.Products;
             set
             {
-                _productListOfCategory = value;
+                _category.Products = value;
                 NotifyPropertyChanged(nameof(ProductListOfCategory));
             }
         }

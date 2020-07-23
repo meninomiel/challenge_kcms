@@ -2,6 +2,7 @@
 using Challenge_KCMS.Services;
 using Challenge_KCMS.Validators;
 using FluentValidation;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -14,9 +15,8 @@ namespace Challenge_KCMS.ViewModels
         public ICommand ViewAllProductCommand { get; private set; }
 
         public AddProductViewModel()
-        {
+        {          
             _productValidator = new ProductValidator();
-
             _product = new Product();
             _productRepository = new ProductRepository();
 
@@ -27,7 +27,6 @@ namespace Challenge_KCMS.ViewModels
             AddProductCommand = new Command(async () => await AddProduct());
             ViewAllProductCommand = new Command(async () => await ShowProductList());
         }
-
 
         async Task AddProduct()
         {
@@ -43,6 +42,7 @@ namespace Challenge_KCMS.ViewModels
 
                 if (userResponse)
                 {
+                    //_product.CategoryId = _product.Category.Id;
                     _productRepository.InsertProduct(_product);
                     await _navigationService.NavigateToProductsPage();
                 }

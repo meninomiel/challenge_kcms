@@ -14,7 +14,7 @@ namespace Challenge_KCMS.Models
         public string Name { get; set; }
 
         // Produtos da Categoria
-        [OneToMany]
-        public ICollection<Product> Products { get; set; }
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<Product> Products { get; set; }
     }
 }

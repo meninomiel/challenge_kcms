@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Challenge_KCMS.Views.ProductView">
+             x:Class="Challenge_KCMS.Views.ProductView"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors">
 
     <!--<ContentView.Resources>
         <ResourceDictionary>
@@ -22,7 +23,8 @@
                    Placeholder="Descrição do Produto" />
             <Picker Title="Selecione Categoria" ItemsSource="{Binding CategoryList}" 
                     ItemDisplayBinding="{Binding Name}" 
-                    SelectedItem="{Binding Category}" />
+                    SelectedItem="{Binding Category}">
+            </Picker>
 
         </StackLayout>
   </ContentView.Content>
