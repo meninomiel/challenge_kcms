@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:component="clr-namespace:Challenge_KCMS.Views.Component"
              x:Class="Challenge_KCMS.Views.CategoryDetails"
              Title="Detalhes da Categoria">
     <ContentPage.Content>
@@ -9,31 +10,7 @@
                    Text="{Binding CategoryName}"
                    Placeholder="Nome do Produto"></Entry>
 
-            <ListView ItemsSource="{Binding ProductListOfCategory}"
-                      SelectedItem="{Binding SelectedCategoryItem, Mode=TwoWay}"
-              CachingStrategy="RecycleElement"
-              RowHeight="60">
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="150"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"></Label>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-            </ListView>
+            <component:ProductsListView />
 
             <Button Text="Atualizar" Command="{Binding UpdateCategoryCommand}"></Button>
             <Button Text="Deletar" Command="{Binding DeleteCategoryCommand}"></Button>

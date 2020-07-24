@@ -2,8 +2,8 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Challenge_KCMS.Views.Component.ProductsListView">
-  <ContentView.Content>
-        <ListView ItemsSource="{Binding ProductList}"
+    <ContentView.Content>
+        <ListView ItemsSource="{Binding ProductList}" 
                       SelectedItem="{Binding SelectedProductItem, Mode=TwoWay}"
               CachingStrategy="RecycleElement"
               RowHeight="60">

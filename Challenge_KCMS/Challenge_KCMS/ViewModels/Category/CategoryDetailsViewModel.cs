@@ -29,11 +29,17 @@ namespace Challenge_KCMS.ViewModels
             DeleteCategoryCommand = new Command(async () => await DeleteCategory());
 
             FetchCategoryDetails();
+            GetAllProducts();
         }
 
         void FetchCategoryDetails()
         {
             _category = _categoryRepository.GetCategoryDetail(_category.Id);
+        }
+
+        void GetAllProducts()
+        {
+            ProductList = _category.Products;
         }
 
         async Task DeleteCategory()
@@ -73,6 +79,26 @@ namespace Challenge_KCMS.ViewModels
                 await _messageService.ShowAsync(
                     "Detalhes da Categoria",
                     validationResult.Errors[0].ErrorMessage, "OK");
+            }
+        }
+
+        async void ShowProductDetails(int selectedProductId)
+        {
+            await _navigationService.NavigateToProductDetailsPage(selectedProductId);
+        }
+
+        Product _selectedProductItem;
+        public Product SelectedProductItem
+        {
+            get => _selectedProductItem;
+            set
+            {
+                if (value != null)
+                {
+                    _selectedProductItem = value;
+                    NotifyPropertyChanged("SelectedProductItem");
+                    ShowProductDetails(value.Id);
+                }
             }
         }
     }
