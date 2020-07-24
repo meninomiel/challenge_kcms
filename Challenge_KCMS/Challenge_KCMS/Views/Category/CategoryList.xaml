@@ -19,7 +19,7 @@
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"></Label>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontSize="Large"></Label>
                                 <Label Grid.Row="1" Grid.Column="0" 
                                        Text="{Binding Path=Products.Count, StringFormat='{0}', Converter={StaticResource countStringConverter}}">
                                 </Label>

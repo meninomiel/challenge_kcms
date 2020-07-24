@@ -42,8 +42,8 @@ namespace Challenge_KCMS.ViewModels
 
                 if (userResponse)
                 {
-                    //_product.CategoryId = _product.Category.Id;
                     _productRepository.InsertProduct(_product);
+                    _navigationService.PopAsyncService();
                     await _navigationService.NavigateToProductsPage();
                 }
             }

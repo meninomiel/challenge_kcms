@@ -15,7 +15,7 @@ namespace Challenge_KCMS.Util
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (int)value;
+            throw new NotImplementedException();
         }
     }
 }
