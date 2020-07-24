@@ -25,11 +25,11 @@ namespace Challenge_KCMS.ViewModels
                 Id = selectedProductId
             };
             _productRepository = new ProductRepository();
+            _categoryRepository = new CategoryRepository();
             UpdateProductCommand = new Command(async () => await UpdateProduct());
             DeleteProductCommand = new Command(async () => await DeleteProduct());
 
             FetchProductDetails();
-
         }
 
         async Task DeleteProduct()
@@ -73,7 +73,22 @@ namespace Challenge_KCMS.ViewModels
 
         void FetchProductDetails()
         {
+            CategoryList = _categoryRepository.GetCategories();
             _product = _productRepository.GetProductDetail(_product.Id);
+        }
+
+        int _selectedCategoryIndex;
+        public int SelectedCategoryIndex
+        {
+            get
+            {
+                return (_product.Category != null) ? _product.Category.Id - 1 : -1;
+            }
+            set
+            {
+                _selectedCategoryIndex = value;
+                NotifyPropertyChanged(nameof(SelectedCategoryIndex));
+            }
         }
 
     }

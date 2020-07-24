@@ -23,7 +23,7 @@
                    Placeholder="Descrição do Produto" />
             <Picker Title="Selecione Categoria" ItemsSource="{Binding CategoryList}" 
                     ItemDisplayBinding="{Binding Name}" 
-                    SelectedItem="{Binding Category}">
+                    SelectedItem="{Binding Category}" SelectedIndex="{Binding SelectedCategoryIndex}">
             </Picker>
 
         </StackLayout>
