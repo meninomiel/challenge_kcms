@@ -40,7 +40,7 @@ namespace Challenge_KCMS.ViewModels
                 "OK", "Cancelar");
             if (userResponse)
             {
-                _productRepository.DeleteProduct(_product.Id);
+                _productRepository.DeleteProduct(_product);
                 _navigationService.PopAsyncService();
             }
         }

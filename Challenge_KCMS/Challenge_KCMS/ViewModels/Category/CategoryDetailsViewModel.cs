@@ -51,7 +51,7 @@ namespace Challenge_KCMS.ViewModels
 
             if (userResponse)
             {
-                _categoryRepository.DeleteCategory(_category.Id);
+                _categoryRepository.DeleteCategory(_category);
                 _navigationService.PopAsyncService();
             }
         }

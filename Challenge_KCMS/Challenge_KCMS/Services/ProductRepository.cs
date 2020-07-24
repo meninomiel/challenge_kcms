@@ -17,9 +17,9 @@ namespace Challenge_KCMS.Services
             _databaseHelper.DeleteAllProducts();
         }
 
-        public void DeleteProduct(int productId)
+        public void DeleteProduct(Product product)
         {
-            _databaseHelper.DeleteProduct(productId);
+            _databaseHelper.DeleteProduct(product);
         }
 
         public Product GetProductDetail(int productId)

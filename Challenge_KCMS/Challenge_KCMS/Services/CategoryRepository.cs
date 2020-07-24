@@ -19,9 +19,9 @@ namespace Challenge_KCMS.Services
             _databaseHelper.DeleteAllCategories();
         }
 
-        public void DeleteCategory(int categoryId)
+        public void DeleteCategory(Category category)
         {
-            _databaseHelper.DeleteCategory(categoryId);
+            _databaseHelper.DeleteCategory(category);
         }
 
         public List<Category> GetCategories()

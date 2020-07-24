@@ -18,7 +18,7 @@ namespace Challenge_KCMS.Services
         void UpdateProduct(Product product);
 
         // Deleta um produto
-        void DeleteProduct(int id);
+        void DeleteProduct(Product product);
 
         // Deleta um tudo
         void DeleteAllProducts();

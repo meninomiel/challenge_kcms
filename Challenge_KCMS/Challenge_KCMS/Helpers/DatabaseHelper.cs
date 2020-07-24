@@ -59,9 +59,9 @@ namespace Challenge_KCMS.Data
         }
 
         // Deletar produto
-        public void DeleteProduct(int id)
+        public void DeleteProduct(Product product)
         {
-            WriteOperations.Delete(sqliteconnection, id, false);
+            WriteOperations.Delete(sqliteconnection, product, false);
         }
 
         // Deletar tudo
@@ -94,9 +94,9 @@ namespace Challenge_KCMS.Data
         }
 
         // Deletar categoria
-        public void DeleteCategory(int categoryId)
+        public void DeleteCategory(Category category)
         {
-            WriteOperations.Delete(sqliteconnection, categoryId, false);
+            WriteOperations.Delete(sqliteconnection, category, false);
         }
 
         // Deletar tudo

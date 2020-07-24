@@ -14,7 +14,7 @@ namespace Challenge_KCMS.Interfaces.Repositories
         void InsertCategory(Category category);
 
         // Deleta categoria
-        void DeleteCategory(int categoryId);
+        void DeleteCategory(Category category);
 
         // Deleta todas categorias
         void DeleteAllCategories();
