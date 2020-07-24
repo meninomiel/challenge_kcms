@@ -2,37 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Challenge_KCMS.Views.ProductList"
-             Title="Lista de Produtos">
+             Title="Lista de Produtos"
+             xmlns:component="clr-namespace:Challenge_KCMS.Views.Component">
 
     <ContentPage.Content>
 
         <StackLayout>
-            <ListView ItemsSource="{Binding ProductList}"
-                      SelectedItem="{Binding SelectedProductItem, Mode=TwoWay}"
-              CachingStrategy="RecycleElement"
-              RowHeight="60">
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="150"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"></Label>
-                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding Price}"></Label>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-            </ListView>
+            <component:ProductsListView />
 
             <Button Text="Adicionar Produto" Command="{Binding AddCommand}"></Button>
             <Button Text="Remover Todos os Produtos" Command="{Binding DeleteAllProductsCommand}"></Button>
