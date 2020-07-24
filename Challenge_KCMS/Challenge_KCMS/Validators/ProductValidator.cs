@@ -19,6 +19,9 @@ namespace Challenge_KCMS.Validators
 
             // Verifica se Preço é vazio e se maior que zero
             RuleFor(e => e.Price).NotEmpty().WithMessage("Informe o preço").Must(ValidatePrice).WithMessage("O valor deve ser maior do que zero.");
+
+            // Verifica se Categoria é vazio
+            RuleFor(e => e.Category).NotEmpty().WithMessage("Selecione uma categoria.");
         }
 
         #region Validator Methods
