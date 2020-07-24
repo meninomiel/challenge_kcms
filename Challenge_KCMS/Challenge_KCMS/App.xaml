@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <util:CurrencyConverter x:Key="currencyConverter" />
+            <util:CountStringConverter x:Key="countStringConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

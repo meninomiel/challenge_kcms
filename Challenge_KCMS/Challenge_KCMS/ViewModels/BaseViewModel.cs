@@ -118,7 +118,6 @@ namespace Challenge_KCMS.ViewModels
             }
         }
 
-        //ICollection<Product> _productListOfCategory;
         public List<Product> ProductListOfCategory
         {
             get => _category.Products;

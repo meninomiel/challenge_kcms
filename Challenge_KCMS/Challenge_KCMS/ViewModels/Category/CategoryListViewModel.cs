@@ -22,6 +22,7 @@ namespace Challenge_KCMS.ViewModels
             AddCommand = new Command(async () => await GoToAddCategoryPage());
             DeleteAllCategoriesCommand = new Command(async () => await DeleteAllCategories());
             GoToAddProductCommand = new Command(async () => await GoToAddProductPage());
+
             GetAllCategories();
         }
 
