@@ -5,9 +5,9 @@
              >
     <ContentView.Content>
         <ListView ItemsSource="{Binding ProductList}" 
-                      SelectedItem="{Binding SelectedProductItem, Mode=TwoWay}"
-              CachingStrategy="RecycleElement"
-              HasUnevenRows="True" SeparatorVisibility="None">
+                  SelectedItem="{Binding SelectedProductItem, Mode=TwoWay}"
+                  CachingStrategy="RecycleElement"
+                  HasUnevenRows="True" SeparatorVisibility="None" >
 
             <ListView.ItemTemplate>
                 <DataTemplate>

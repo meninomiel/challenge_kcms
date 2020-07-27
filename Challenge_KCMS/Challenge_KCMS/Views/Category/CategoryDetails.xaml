@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:component="clr-namespace:Challenge_KCMS.Views.Component"
              x:Class="Challenge_KCMS.Views.CategoryDetails"
-             Title="Detalhes da Categoria" Style="{StaticResource contentView__item}">
+             Title="Detalhes da Categoria">
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="inputName"
@@ -12,9 +12,9 @@
 
             <component:ProductsListView />
 
-            <Button Text="Atualizar" Command="{Binding UpdateCategoryCommand}"></Button>
-            <Button Text="Deletar" Command="{Binding DeleteCategoryCommand}"></Button>
-            
+            <Button Text="Atualizar Categoria" Command="{Binding UpdateCategoryCommand}"/>
+            <Button Text="Deletar Categoria" Command="{Binding DeleteCategoryCommand}"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Challenge_KCMS.Views.ProductList"
              Title="Lista de Produtos"
-             xmlns:component="clr-namespace:Challenge_KCMS.Views.Component"
-             Style="{StaticResource contentView__item}">
+             xmlns:component="clr-namespace:Challenge_KCMS.Views.Component">
 
     <ContentPage.Content>
 

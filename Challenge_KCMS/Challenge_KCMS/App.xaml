@@ -33,6 +33,7 @@
                 <Setter Property="CornerRadius" Value="5"/>
                 <Setter Property="HasShadow" Value="False"/>
                 <Setter Property="Padding" Value="10"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
             </Style>
             
             <Style x:Key="listView__divider" TargetType="BoxView">
@@ -49,9 +50,19 @@
             
             
             <!-- Correção de espaçamento -->
-            <Style x:Key="contentView__item" TargetType="ContentPage">
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="Padding" Value="15"/>
             </Style>
+            
+            <!-- Estilos Globais -->
+            <Style x:Key="actionLink" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextDecorations" Value="Underline"/>
+                <Setter Property="TextColor" Value="Accent"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

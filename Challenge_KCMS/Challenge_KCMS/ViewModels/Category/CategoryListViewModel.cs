@@ -14,16 +14,24 @@ namespace Challenge_KCMS.ViewModels
         public ICommand AddCommand { get; private set; }
         public ICommand DeleteAllCategoriesCommand { get; private set; }
         public ICommand GoToAddProductCommand { get; private set; }
+        public ICommand GoToProductListPageCommand { get; private set; }
 
         public CategoryListViewModel()
         {
             _categoryRepository = new CategoryRepository();
+            _productRepository = new ProductRepository();
 
             AddCommand = new Command(async () => await GoToAddCategoryPage());
             DeleteAllCategoriesCommand = new Command(async () => await DeleteAllCategories());
             GoToAddProductCommand = new Command(async () => await GoToAddProductPage());
+            GoToProductListPageCommand = new Command(async () => await GoToProductListPage());
 
             GetAllCategories();
+        }
+
+        async Task GoToProductListPage()
+        {
+            await _navigationService.NavigateToProductsPage();
         }
 
         async Task GoToAddProductPage()
@@ -73,6 +81,17 @@ namespace Challenge_KCMS.ViewModels
                     ShowCategoryDetails(value.Id);
                 }
             }
+        }
+
+        //bool _hasAnyProduct;
+        public bool HasAnyProduct
+        {
+            get
+            {
+                int productCount = _productRepository.GetProductList().Count;
+                return (productCount > 0) ? true : false;
+            }
+            set { }
         }
     }
 }

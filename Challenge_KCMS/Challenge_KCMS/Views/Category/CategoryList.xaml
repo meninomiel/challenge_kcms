@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Challenge_KCMS.Views.CategoryList"
-             Title="Categorias" Style="{StaticResource contentView__item}">
+             Title="Categorias">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="0,0,10,0">
             <ListView ItemsSource="{Binding CategoryList}"
                       SelectedItem="{Binding SelectedCategoryItem, Mode=TwoWay}"
                       CachingStrategy="RecycleElement"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True" SeparatorVisibility="None">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -29,6 +29,13 @@
 
             <Button Text="Adicionar Categoria" Command="{Binding AddCommand}"></Button>
             <Button Text="Adicionar Produto" Command="{Binding GoToAddProductCommand}"></Button>
+            
+            <Label Text="Visualizar todos os produtos"
+                   Style="{StaticResource actionLink}" IsVisible="{Binding HasAnyProduct}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToProductListPageCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

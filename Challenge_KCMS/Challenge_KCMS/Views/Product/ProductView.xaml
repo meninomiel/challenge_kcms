@@ -15,16 +15,15 @@
             <Entry x:Name="inputName"
                    Text="{Binding Name}"
                    Placeholder="Nome do Produto" />
-            <Entry x:Name="inputPrice"
+            <Entry x:Name="inputPrice" Keyboard="Numeric"
                    Text="{Binding Price, Converter={StaticResource currencyConverter}}"
                    Placeholder="Preço" />
-            <Editor x:Name="inputDescription"
+            <Editor x:Name="inputDescription" AutoSize="TextChanges"
                    Text="{Binding Description}"
                    Placeholder="Descrição do Produto" />
             <Picker Title="Selecione Categoria" ItemsSource="{Binding CategoryList}" 
                     ItemDisplayBinding="{Binding Name}" 
-                    SelectedItem="{Binding Category}" SelectedIndex="{Binding SelectedCategoryIndex}">
-            </Picker>
+                    SelectedItem="{Binding Category}" SelectedIndex="{Binding SelectedCategoryIndex}" />
 
         </StackLayout>
   </ContentView.Content>
