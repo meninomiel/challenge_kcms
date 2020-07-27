@@ -1,29 +1,58 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Challenge_KCMS.Views.Component.ProductsListView">
+             x:Class="Challenge_KCMS.Views.Component.ProductsListView"
+             >
     <ContentView.Content>
         <ListView ItemsSource="{Binding ProductList}" 
                       SelectedItem="{Binding SelectedProductItem, Mode=TwoWay}"
               CachingStrategy="RecycleElement"
-              RowHeight="60">
+              HasUnevenRows="True" SeparatorVisibility="None">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="5">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25"></RowDefinition>
-                                <RowDefinition Height="25"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="150"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
+                        <Frame Style="{StaticResource listView__item}">
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="150"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
 
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"></Label>
-                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Price}"></Label>
-                        </Grid>
+                                <Label Grid.Row="0" 
+                                   Grid.Column="0" 
+                                   Text="{Binding Name}"
+                                   Style="{StaticResource listView__title}" />
+
+                                <Label Grid.Row="0" 
+                                Grid.Column="1" 
+                                Text="{Binding Price, Converter={StaticResource currencyConverter}}"
+                                Style="{StaticResource listView__price}" />
+
+                                <BoxView Style="{StaticResource listView__divider}"
+                                         Grid.Row="1" 
+                                         Grid.Column="0" 
+                                         Grid.ColumnSpan="2" />
+
+                                <Label Grid.Row="2" 
+                                   Grid.Column="0" 
+                                   Grid.ColumnSpan="2"
+                                   Text="{Binding Description}"
+                                   Style="{StaticResource listView__description}"/>
+
+                                <Label Grid.Row="3" 
+                                       Grid.Column="0"
+                                       Style="{StaticResource listView__info}"
+                                       Text="{Binding Path=Category.Name, StringFormat='Categoria: {0}'}" />
+
+                            </Grid>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -2,28 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Challenge_KCMS.Views.CategoryList"
-             Title="Categorias">
+             Title="Categorias" Style="{StaticResource contentView__item}">
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding CategoryList}"
                       SelectedItem="{Binding SelectedCategoryItem, Mode=TwoWay}"
-              CachingStrategy="RecycleElement"
-              HasUnevenRows="True">
+                      CachingStrategy="RecycleElement"
+                      HasUnevenRows="True">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"></Label>
-                                <Label Grid.Row="1" Grid.Column="0" 
-                                       Text="{Binding Path=Products.Count, StringFormat='{0}', Converter={StaticResource countStringConverter}}">
-                                </Label>
-                            </Grid>
+                            <Frame Style="{StaticResource listView__item}">
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" 
+                                           Style="{StaticResource listView__title}"/>
+                                    <Label Text="{Binding Path=Products.Count, StringFormat='{0}', Converter={StaticResource countStringConverter}}">
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

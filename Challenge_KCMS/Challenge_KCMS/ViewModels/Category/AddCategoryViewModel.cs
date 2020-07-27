@@ -37,6 +37,7 @@ namespace Challenge_KCMS.ViewModels
                 if (userResponse)
                 {
                     _categoryRepository.InsertCategory(_category);
+                    _navigationService.PopAsyncService();
                     await _navigationService.NavigateToCategoriesPage();
                 }
             }
