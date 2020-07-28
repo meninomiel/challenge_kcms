@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Challenge_KCMS.Interfaces.Repositories;
+using Challenge_KCMS.Interfaces.Services;
+using Challenge_KCMS.Services;
+using Challenge_KCMS.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +10,25 @@ namespace Challenge_KCMS
 {
     public partial class App : Application
     {
+        ICategoryRepository _categoryRepository;
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // Aplicando a injeção de dependência nos serviços implementados
+            DependencyService.Register<IMessageService, MessageService>();
+            DependencyService.Register<INavigationService, NavigationService>();
+
+            // Criando uma instância do repositorio
+            _categoryRepository = new CategoryRepository();
+
+            //invoca o evento 
+            OnAppStart();
+        }
+
+        private void OnAppStart()
+        {            
+            MainPage = new NavigationPage(new CategoryList());
         }
 
         protected override void OnStart()

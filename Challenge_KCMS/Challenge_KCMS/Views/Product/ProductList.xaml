@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Challenge_KCMS.Views.ProductList"
+             Title="Lista de Produtos"
+             xmlns:component="clr-namespace:Challenge_KCMS.Views.Component"
+             xmlns:util="clr-namespace:Challenge_KCMS.Util">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Label Text="Nenhum produto adicionado." IsVisible="{Binding HasAnyProduct}"/>
+
+            <component:ProductsListView />
+
+            <Button Text="Adicionar Produto" Command="{Binding AddCommand}"></Button>
+            <Button Text="Remover Todos os Produtos" Command="{Binding DeleteAllProductsCommand}"
+                    IsVisible="{Binding HasAnyProduct, Converter={util:InverseBoolConverter}}"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

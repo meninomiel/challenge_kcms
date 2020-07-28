@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:component="clr-namespace:Challenge_KCMS.Views.Component"
+             x:Class="Challenge_KCMS.Views.CategoryDetails"
+             Title="Detalhes da Categoria">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="inputName"
+                   Text="{Binding CategoryName}"
+                   Placeholder="Nome do Produto"></Entry>
+
+            <component:ProductsListView />
+
+            <Button Text="Atualizar Categoria" Command="{Binding UpdateCategoryCommand}"/>
+            <Button Text="Deletar Categoria" Command="{Binding DeleteCategoryCommand}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

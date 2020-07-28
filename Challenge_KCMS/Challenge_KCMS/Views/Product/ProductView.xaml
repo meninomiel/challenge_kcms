@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Challenge_KCMS.Views.ProductView"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors">
+
+    <!--<ContentView.Resources>
+        <ResourceDictionary>
+            <util:CurrencyConverter x:Key="currencyConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>-->
+
+    <ContentView.Content>
+      <StackLayout>
+            <Entry x:Name="inputName"
+                   Text="{Binding Name}"
+                   Placeholder="Nome do Produto" />
+            <Entry x:Name="inputPrice" Keyboard="Numeric"
+                   Text="{Binding Price, Converter={StaticResource currencyConverter}}"
+                   Placeholder="Preço" />
+            <Editor x:Name="inputDescription" AutoSize="TextChanges"
+                   Text="{Binding Description}"
+                   Placeholder="Descrição do Produto" />
+            <Picker Title="Selecione Categoria" ItemsSource="{Binding CategoryList}" 
+                    ItemDisplayBinding="{Binding Name}" 
+                    SelectedItem="{Binding Category}" SelectedIndex="{Binding SelectedCategoryIndex}" />
+
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

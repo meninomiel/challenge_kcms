@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Challenge_KCMS.Views.ProductDetails"
+             xmlns:local="clr-namespace:Challenge_KCMS.Views"
+             Title="Detalhes do Produto">
+    <ContentPage.Content>
+        <StackLayout>
+            <local:ProductView />
+            <Button Text="Atualizar Produto" Command="{Binding UpdateProductCommand}"></Button>
+            <Button Text="Deletar Produto" Command="{Binding DeleteProductCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
