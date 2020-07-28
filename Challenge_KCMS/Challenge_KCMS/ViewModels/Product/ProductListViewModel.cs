@@ -21,10 +21,11 @@ namespace Challenge_KCMS.ViewModels
         public ProductListViewModel()
         {
             _productRepository = new ProductRepository();
+
             AddCommand = new Command(async () => await GoToAddProductPage());
             DeleteAllProductsCommand = new Command(async () => await DeleteAllProducts());
-            GetAllProducts();
 
+            GetAllProducts();
         }
 
         void GetAllProducts()
@@ -69,6 +70,16 @@ namespace Challenge_KCMS.ViewModels
                     ShowProductDetails(value.Id);
                 }
             }
+        }
+
+        public bool HasAnyProduct
+        {
+            get
+            {
+                int productCount = ProductList.Count;
+                return (productCount > 0) ? false : true;
+            }
+            set { }
         }
 
     }

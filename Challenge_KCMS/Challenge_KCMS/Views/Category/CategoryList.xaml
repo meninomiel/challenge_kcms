@@ -2,9 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Challenge_KCMS.Views.CategoryList"
-             Title="Categorias">
+             Title="Categorias"
+             xmlns:util="clr-namespace:Challenge_KCMS.Util">
     <ContentPage.Content>
         <StackLayout Padding="0,0,10,0">
+
+            <Label Text="Nenhuma categoria adicionada." IsVisible="{Binding HasAnyCategory}"/>
+
             <ListView ItemsSource="{Binding CategoryList}"
                       SelectedItem="{Binding SelectedCategoryItem, Mode=TwoWay}"
                       CachingStrategy="RecycleElement"
@@ -28,8 +32,9 @@
             </ListView>
 
             <Button Text="Adicionar Categoria" Command="{Binding AddCommand}"></Button>
-            <Button Text="Adicionar Produto" Command="{Binding GoToAddProductCommand}"></Button>
-            
+            <Button Text="Adicionar Produto" Command="{Binding GoToAddProductCommand}" 
+                    IsVisible="{Binding HasAnyCategory, Converter={util:InverseBoolConverter}}"/>
+
             <Label Text="Visualizar todos os produtos"
                    Style="{StaticResource actionLink}" IsVisible="{Binding HasAnyProduct}">
                 <Label.GestureRecognizers>

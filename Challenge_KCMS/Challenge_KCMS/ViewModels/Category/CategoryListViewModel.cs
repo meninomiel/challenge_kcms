@@ -83,13 +83,22 @@ namespace Challenge_KCMS.ViewModels
             }
         }
 
-        //bool _hasAnyProduct;
         public bool HasAnyProduct
         {
             get
             {
                 int productCount = _productRepository.GetProductList().Count;
                 return (productCount > 0) ? true : false;
+            }
+            set { }
+        }
+
+        public bool HasAnyCategory
+        {
+            get
+            {
+                int categoryCount = CategoryList.Count;
+                return (categoryCount > 0) ? false : true;
             }
             set { }
         }
